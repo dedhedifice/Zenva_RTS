@@ -27,6 +27,7 @@ var attack_target : Unit
 enum Temperment {NEUTRAL,AGGRESSIVE}
 @export var temperment : Temperment
 
+#adding stealth toggle next
 
 func _process(delta):
 	if not agent.is_navigation_finished():
