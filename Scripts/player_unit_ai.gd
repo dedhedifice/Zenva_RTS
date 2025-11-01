@@ -8,7 +8,6 @@ var enemy_list : Array[Unit] = []
 
 @onready var unit : Unit = get_parent()
 
-var toggle_behavior : Temperment = NEUTRAL
 
 
 func _process(delta: float) -> void:
