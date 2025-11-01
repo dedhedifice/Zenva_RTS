@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg8ek4wtbvoy8"]
+
+[ext_resource type="Script" uid="uid://dt3gku5bjs0qv" path="res://Scripts/unit.gd" id="1_urojl"]
+[ext_resource type="Texture2D" uid="uid://bpgebaup8d8g8" path="res://Real-Time Strategy Game - Assets/Sprites/Characters/tile_0087.png" id="2_vktxd"]
+[ext_resource type="Script" uid="uid://bee4spp8ajrws" path="res://Scripts/unit_visual.gd" id="3_hjly6"]
+[ext_resource type="Script" uid="uid://c0y08vwcflw76" path="res://Scripts/Health_bar.gd" id="4_l6pdx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yagyl"]
+radius = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vsbj"]
+bg_color = Color(0.12277558, 0.12277559, 0.12277558, 0.9490196)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj46g"]
+bg_color = Color(0.9055222, 0, 0.098147966, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[node name="Unit_Base" type="Area2D" groups=["Unit"]]
+script = ExtResource("1_urojl")
+move_speed = 30.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+texture = ExtResource("2_vktxd")
+offset = Vector2(0, -8)
+script = ExtResource("3_hjly6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yagyl")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
+debug_enabled = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." groups=["Unit"]]
+modulate = Color(1.0572945, 1.0569993, 1.0562915, 1)
+offset_left = -10.0
+offset_top = -11.000001
+offset_right = 190.0
+offset_bottom = 19.000008
+scale = Vector2(0.1, 0.1)
+theme_override_styles/background = SubResource("StyleBoxFlat_2vsbj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aj46g")
+value = 50.0
+show_percentage = false
+script = ExtResource("4_l6pdx")

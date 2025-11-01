@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbx338nlfu8cp"
+path="res://.godot/imported/take_damage.wav-743133f220444d3af83e056ec7e6bb51.sample"
+
+[deps]
+
+source_file="res://Real-Time Strategy Game - Assets/Audio/take_damage.wav"
+dest_files=["res://.godot/imported/take_damage.wav-743133f220444d3af83e056ec7e6bb51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

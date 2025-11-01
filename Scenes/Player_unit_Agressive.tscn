@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cycwifr0750lo"]
+
+[ext_resource type="PackedScene" uid="uid://b73lyn55qgwir" path="res://Scenes/unit_base.tscn" id="1_t4qq5"]
+[ext_resource type="Script" uid="uid://xxcougvc2itb" path="res://Scripts/player_unit.gd" id="2_ow76l"]
+[ext_resource type="Script" uid="uid://cym64o541edma" path="res://Scripts/player_unit_ai.gd" id="3_feq26"]
+
+[sub_resource type="Gradient" id="Gradient_qq154"]
+offsets = PackedFloat32Array(0.55212355)
+colors = PackedColorArray(6.3773246e-06, 0.62003624, 0.06919862, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iwxyt"]
+gradient = SubResource("Gradient_qq154")
+
+[node name="Unit_Player_Agro" groups=["Unit_Player"] instance=ExtResource("1_t4qq5")]
+max_hp = 20.0
+regen_hp_rate = 0.25
+temperment = 1
+
+[node name="PlayerUnit" type="Node" parent="." index="0"]
+script = ExtResource("2_ow76l")
+
+[node name="Player_Unit_AI" type="Node2D" parent="." index="1"]
+visible = false
+script = ExtResource("3_feq26")
+detect_range = 1000.0
+
+[node name="SelectionVisual" type="Sprite2D" parent="." index="2"]
+visible = false
+position = Vector2(-4.7683716e-07, 6.375)
+scale = Vector2(0.0703125, 6.7500005)
+texture = SubResource("GradientTexture1D_iwxyt")
